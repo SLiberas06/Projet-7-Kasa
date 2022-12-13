@@ -20,13 +20,14 @@ const ImageCard = styled.img`
 `
 
 const TitleCard = styled.h2`
-  width: 100px;
+  width: 100%;
   font-size: 19px;
   font-family: ${Fonts.principal};
-  color: ${Colors.textBanner};
+  color: ${Colors.textWhite};
   margin: 15px;
   font-weight: 100;
   opacity: 0.9;
+  // background-color: red;
 `
 
 function Card({ title, cover }) {

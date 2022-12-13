@@ -15,11 +15,10 @@ const StyledBanner = styled.div`
     height: 220px;
     border-radius: 25px;
     margin: 0;
-    object-fit: contain;
   }
 `
 const TitleBanner = styled.h1`
-  color: ${Colors.textBanner};
+  color: ${Colors.textWhite};
   font-family: ${Fonts.principal};
   font-weight: 200;
   font-size: 24px;

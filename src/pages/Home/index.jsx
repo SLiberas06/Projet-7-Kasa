@@ -16,9 +16,9 @@ function Home() {
       <Banner />
       {DataProperty.map((property, index) => (
         <Card
-        // key={`${property.id}`}
-        // title={property.title}
-        // cover={`${property.cover}`}
+          key={`${property.id}`}
+          title={property.title}
+          cover={`${property.cover}`}
         />
       ))}
     </HomeContainer>

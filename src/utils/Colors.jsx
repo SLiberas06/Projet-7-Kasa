@@ -1,6 +1,6 @@
 const Colors = {
   primary: '#FF6060',
-  textBanner: '#FFFFFF',
+  textWhite: '#FFFFFF',
   linearBanner:
     'linear-gradient(360deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))',
   linearCard:

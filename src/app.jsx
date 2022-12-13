@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Property from './pages/Property'
 import Error from './pages/Error'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
