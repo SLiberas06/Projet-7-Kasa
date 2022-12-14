@@ -11,12 +11,21 @@ const StyledCard = styled.div`
   display: flex;
   align-items: flex-end;
   background: ${Colors.linearCard}, ${Colors.primary};
+  @media (min-width: 992px) {
+    width: 340px;
+    height: 340px;
+  }
 `
 const ImageCard = styled.img`
   width: 335px;
   height: 255px;
   border-radius: 10px;
   position: absolute;
+  object-fit: cover;
+  @media (min-width: 992px) {
+    width: 340px;
+    height: 340px;
+  }
 `
 
 const TitleCard = styled.h2`
@@ -27,7 +36,6 @@ const TitleCard = styled.h2`
   margin: 15px;
   font-weight: 100;
   opacity: 0.9;
-  // background-color: red;
 `
 
 function Card({ title, cover }) {

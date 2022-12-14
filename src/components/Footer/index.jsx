@@ -9,10 +9,23 @@ const StyledFooter = styled.footer`
   background-color: #000000;
   color: ${Colors.textWhite};
   padding: 60px;
+  @media (min-width: 992px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px 50px 0px;
+    text-align: center;
+  }
 `
 
 const FooterLogo = styled.img`
   margin-left: 70px;
+  @media (min-width: 992px) {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+  }
 `
 const FooterH3 = styled.h3`
   font-family: ${Fonts.principal};
