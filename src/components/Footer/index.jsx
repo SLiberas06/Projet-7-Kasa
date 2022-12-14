@@ -8,25 +8,14 @@ const StyledFooter = styled.footer`
   height: 110px;
   background-color: #000000;
   color: ${Colors.textWhite};
-  padding: 60px;
-  @media (min-width: 992px) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 0px 50px 0px;
-    text-align: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 0px 30px 0px;
 `
 
-const FooterLogo = styled.img`
-  margin-left: 70px;
-  @media (min-width: 992px) {
-    width: 150px;
-    height: 150px;
-    margin: 0;
-  }
-`
 const FooterH3 = styled.h3`
   font-family: ${Fonts.principal};
   font-size: 18px;
@@ -35,7 +24,7 @@ const FooterH3 = styled.h3`
 function Footer() {
   return (
     <StyledFooter>
-      <FooterLogo src={LogoFooter} alt="Kasa" />
+      <img src={LogoFooter} alt="Kasa" />
       <FooterH3>© 2020 Kasa. All rights reserved</FooterH3>
     </StyledFooter>
   )

@@ -1,17 +1,11 @@
-import Banner from '../../components/Banner'
+import HomeBanner from '../../components/HomeBanner'
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import DataProperty from '../../datas/logements.json'
 import Colors from '../../utils/Colors'
-import ImageBanner from '../../assets/Banner_Home_D.png'
+import ImageHomeBanner from '../../assets/Banner_Home_D.png'
+import { Body } from '../../utils/Atoms'
 
-const HomeContainer = styled.body`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`
 const CardWrapper = styled.section`
   @media (min-width: 992px) {
     display: flex;
@@ -28,8 +22,8 @@ const CardWrapper = styled.section`
 
 function Home() {
   return (
-    <HomeContainer>
-      <Banner cover={ImageBanner} />
+    <Body>
+      <HomeBanner cover={ImageHomeBanner} />
       <CardWrapper>
         {DataProperty.map((property, index) => (
           <Card
@@ -39,7 +33,7 @@ function Home() {
           />
         ))}
       </CardWrapper>
-    </HomeContainer>
+    </Body>
   )
 }
 

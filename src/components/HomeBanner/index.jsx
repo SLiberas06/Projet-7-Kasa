@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import Fonts from '../../utils/Atoms'
 import Colors from '../../utils/Colors'
 
-
-const StyledBanner = styled.div`
+const StyledHomeBanner = styled.div`
   background: ${Colors.linearBanner};
   object-fit: cover;
   width: 335px;
@@ -19,25 +18,23 @@ const StyledBanner = styled.div`
     text-align: center;
   }
 `
-const TitleBanner = styled.h1`
+const TitleHomeBanner = styled.h1`
   color: ${Colors.textWhite};
   font-family: ${Fonts.principal};
   font-weight: 200;
   font-size: 24px;
   letter-spacing: 1.5px;
-  padding: 10px 30% 0 5px;
+  padding: 10px 30% 10px 5px;
   margin-left: 10px;
   opacity: 0.9;
-  z-index: 1;
   position: absolute;
   @media (min-width: 992px) {
     font-size: 48px;
     text-align: center;
     padding: 0 20%;
-    // margin: 0 18% 0 18%;
   }
 `
-const BannerImg = styled.img`
+const BannerHomeImg = styled.img`
   position: relative;
   width: 335px;
   height: 110px;
@@ -51,12 +48,12 @@ const BannerImg = styled.img`
   }
 `
 
-function Banner({ cover }) {
+function HomeBanner({ cover }) {
   return (
-    <StyledBanner>
-      <BannerImg src={cover} alt="banner" />
-      <TitleBanner>Chez vous, partout et ailleurs</TitleBanner>
-    </StyledBanner>
+    <StyledHomeBanner>
+      <BannerHomeImg src={cover} alt="banner" />
+      <TitleHomeBanner>Chez vous, partout et ailleurs</TitleHomeBanner>
+    </StyledHomeBanner>
   )
 }
-export default Banner
+export default HomeBanner
