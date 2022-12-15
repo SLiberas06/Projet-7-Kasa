@@ -29,7 +29,7 @@ const NavLink = styled(Link)`
   &:focus {
     text-decoration: underline;
   }
-  margin: 0 8px;
+  margin: 0 0 0 15px;
   @media (max-width: 768px) {
     font-size: 12px;
   }

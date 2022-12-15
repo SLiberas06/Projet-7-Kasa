@@ -9,10 +9,12 @@ const StyledAboutBanner = styled.div`
   align-items: center;
   border-radius: 10px;
   background: ${Colors.linearBanner};
-  margin-right: 15px;
+  margin-bottom: 20px;
   @media (min-width: 992px) {
     background: ${Colors.linearBanner}, url('${ImageBannerAbout}');
     width: 90%;
+    border-radius: 25px;
+    background-size: 100.5%;
   }
 `
 const BannerAboutImg = styled.img`
@@ -20,7 +22,7 @@ const BannerAboutImg = styled.img`
   height: 223px;
   object-fit: cover;
   border-radius: 10px;
-  opacity: 0.5;
+  opacity: 0.6;
   @media (min-width: 992px) {
     display: none;
   }
