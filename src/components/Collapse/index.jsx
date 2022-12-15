@@ -16,31 +16,51 @@ const DivCollapse = styled.div`
   flex-direction: row;
   justify-content: space-between;
   font-family: ${Fonts.principal};
-  width: 320px;
+  width: 90%;
   height: 30px;
   border-radius: 5px;
   background-color: ${Colors.primary};
   margin: 10px 3px;
   padding: 0px 8px;
+  @media (min-width: 992px) {
+    width: 70%;
+    height: 50px;
+  }
 `
 const SectionCollapse = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `
 const TitleCollapse = styled.h1`
   font-size: 15px;
   color: ${Colors.textWhite};
   font-weight: 100;
+  @media (min-width: 992px) {
+    font-size: 25px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+  }
 `
 const TextCollapse = styled.p`
   background-color: ${Colors.backgroundTextAbout};
   padding: 10px 10px 40px 10px;
   margin-top: -10px;
   border-radius: 5px;
+  width: 90%;
   font-size: 14px;
   font-family: ${Fonts.principal};
+  font-weight: 200;
   color: ${Colors.primary};
+  @media (min-width: 992px) {
+    width: 70%;
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding: 10px 0px 40px 20px;
+  }
 `
 
 function Collapse({ title, text }) {
