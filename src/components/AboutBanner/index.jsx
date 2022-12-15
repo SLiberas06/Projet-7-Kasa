@@ -10,11 +10,20 @@ const StyledAboutBanner = styled.div`
   border-radius: 10px;
   background: ${Colors.linearBanner};
   margin-bottom: 20px;
-  @media (min-width: 992px) {
-    background: ${Colors.linearBanner}, url('${ImageBannerAbout}');
+  @media (min-width: 768px) {
+    background: ${Colors.linearBanner}, url('${ImageBannerAbout}') no-repeat;
     width: 90%;
+    object-fit: cover;
+    // height: 223px;
     border-radius: 25px;
-    background-size: 100.5%;
+    background-size: 180%;
+    background-position: center;
+    @media (min-width: 992px) {
+      background-size: 150%;
+    }
+    @media (min-width: 1380px) {
+      background-size: 101%;
+    }
   }
 `
 const BannerAboutImg = styled.img`
@@ -23,7 +32,7 @@ const BannerAboutImg = styled.img`
   object-fit: cover;
   border-radius: 10px;
   opacity: 0.6;
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `
