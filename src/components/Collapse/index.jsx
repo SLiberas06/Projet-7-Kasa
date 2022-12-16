@@ -73,7 +73,7 @@ function Collapse({ title, text }) {
           <FaChevronUp font-size="20px" color="white" />
         </ButtonCollapse>
       </DivCollapse>
-      <TextCollapse>{text}</TextCollapse>
+      <TextCollapse transition="3000ms">{text}</TextCollapse>
     </SectionCollapse>
   ) : (
     <SectionCollapse>

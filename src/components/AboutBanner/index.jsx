@@ -11,7 +11,8 @@ const StyledAboutBanner = styled.div`
   background: ${Colors.linearBanner};
   margin-bottom: 20px;
   @media (min-width: 768px) {
-    background: ${Colors.linearBanner}, url('${ImageBannerAbout}') no-repeat;
+    background: ${Colors.linearBannerLighten},
+      url('${ImageBannerAbout}') no-repeat;
     width: 90%;
     object-fit: cover;
     // height: 223px;

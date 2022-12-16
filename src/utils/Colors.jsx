@@ -7,6 +7,8 @@ const Colors = {
   linearCard:
     'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%)',
   CardWrapper: '#F6F6F6',
+  linearBannerLighten:
+    'linear-gradient(360deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))',
 }
 
 export default Colors
