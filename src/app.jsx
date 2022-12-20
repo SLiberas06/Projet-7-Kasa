@@ -12,15 +12,14 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={[<Home />, <Footer />]} />
 
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={[<About />, <Footer />]} />
 
-        <Route path="/property" element={<Property />} />
+        <Route path="/property" element={[<Property />, <Footer />]} />
 
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   )
 }
