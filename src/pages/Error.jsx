@@ -6,6 +6,9 @@ import Colors from '../utils/Colors'
 
 const ErrorImage = styled.img`
   width: 200px;
+  @media (min-width: 992px) {
+    width: 550px;
+  }
 `
 const SectionError = styled.section`
   width: 100%;
@@ -16,17 +19,31 @@ const SectionError = styled.section`
   justify-content: center;
   font-family: ${Fonts.principal};
   color: ${Colors.primary};
+  @media (min-width: 992px) {
+    height: 800px;
+  }
 `
 const HomeLink = styled(Link)`
   color: ${Colors.primary};
   font-size: 14px;
   letter-spacing: 1px;
+  @media (min-width: 992px) {
+    font-size: 18px;
+  }
 `
 const TextError = styled.p`
   font-size: 19px;
   text-align: center;
   padding: 5px 20px;
   margin-bottom: 20vh;
+  @media (min-width: 992px) {
+    font-size: 40px;
+    margin-bottom: 25vh;
+    margin-top: 10vh;
+    br {
+      display: none;
+    }
+  }
 `
 function Error() {
   return (
