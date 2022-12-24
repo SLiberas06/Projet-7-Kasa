@@ -2,14 +2,16 @@ import PropType from 'prop-types'
 import styled from 'styled-components'
 import Colors from '../../utils/Colors'
 import Fonts from '../../utils/Atoms'
+import { Link } from 'react-router-dom'
 
-const StyledCard = styled.div`
+const StyledCard = styled(Link)`
   width: 335px;
   height: 255px;
   margin: 20px;
   border-radius: 10px;
   display: flex;
   align-items: flex-end;
+  text-decoration: none;
   background: ${Colors.linearCard}, ${Colors.primary};
   @media (min-width: 992px) {
     width: 340px;
@@ -38,9 +40,9 @@ const TitleCard = styled.h2`
   opacity: 0.9;
 `
 
-function Card({ title, cover }) {
+function Card({ title, cover, id }) {
   return (
-    <StyledCard>
+    <StyledCard to={id}>
       <ImageCard src={cover} alt="à louer" />
       <TitleCard>{title}</TitleCard>
     </StyledCard>

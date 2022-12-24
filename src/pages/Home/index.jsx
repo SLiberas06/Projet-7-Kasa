@@ -25,11 +25,12 @@ function Home() {
     <Body>
       <HomeBanner cover={ImageHomeBanner} />
       <CardWrapper>
-        {DataProperty.map((property, index) => (
+        {DataProperty.map((property) => (
           <Card
             key={`${property.id}`}
             title={property.title}
             cover={`${property.cover}`}
+            // to={`/property/`}
           />
         ))}
       </CardWrapper>
