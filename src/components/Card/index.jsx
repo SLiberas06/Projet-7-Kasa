@@ -2,9 +2,9 @@ import PropType from 'prop-types'
 import styled from 'styled-components'
 import Colors from '../../utils/Colors'
 import Fonts from '../../utils/Atoms'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-const StyledCard = styled(Link)`
+const StyledCard = styled.div`
   width: 335px;
   height: 255px;
   margin: 20px;
@@ -40,9 +40,9 @@ const TitleCard = styled.h2`
   opacity: 0.9;
 `
 
-function Card({ title, cover, id }) {
+function Card({ title, cover, id}) {
   return (
-    <StyledCard to={id}>
+    <StyledCard key={id}>
       <ImageCard src={cover} alt="à louer" />
       <TitleCard>{title}</TitleCard>
     </StyledCard>

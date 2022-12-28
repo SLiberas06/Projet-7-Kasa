@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={[<Home />, <Footer />]} />
+        <Route path="/" element={<Home />} {...(<Footer />)} />
 
-        <Route path="/about" element={[<About />, <Footer />]} />
+        <Route path="/about" element={<About />} {...(<Footer />)} />
 
-        <Route path="/property" element={[<Property />, <Footer />]} />
+        <Route path="/property/:propertyId" element={<Property />} />
 
         <Route path="*" element={<Error />} />
       </Routes>

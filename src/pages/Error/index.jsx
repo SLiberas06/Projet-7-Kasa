@@ -1,8 +1,8 @@
-import error from '../assets/404.png'
+import error from '../../assets/404.png'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Fonts from '../utils/Atoms'
-import Colors from '../utils/Colors'
+import Fonts from '../../utils/Atoms'
+import Colors from '../../utils/Colors'
 
 const ErrorImage = styled.img`
   width: 200px;

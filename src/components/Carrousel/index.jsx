@@ -20,7 +20,7 @@ function Carrousel({ pictures }) {
     )
   }
 
-  
+  Z
   return (
     <div>
       <Link to={`/property/${prevPictureNumber}`}>

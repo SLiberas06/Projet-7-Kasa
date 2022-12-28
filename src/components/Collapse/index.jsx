@@ -70,7 +70,7 @@ function Collapse({ title, text }) {
       <DivCollapse className="Open">
         <TitleCollapse>{title}</TitleCollapse>
         <ButtonCollapse onClick={() => setIsOpen(false)}>
-          <FaChevronUp font-size="20px" color="white" />
+          <FaChevronUp fontSize="20px" color="white" />
         </ButtonCollapse>
       </DivCollapse>
       <TextCollapse transition="3000ms">{text}</TextCollapse>
@@ -80,7 +80,7 @@ function Collapse({ title, text }) {
       <DivCollapse className="Close">
         <TitleCollapse>{title}</TitleCollapse>
         <ButtonCollapse onClick={() => setIsOpen(true)}>
-          <FaChevronDown font-size="20px" color="white" />
+          <FaChevronDown fontSize="20px" color="white" />
         </ButtonCollapse>
       </DivCollapse>
     </SectionCollapse>
@@ -88,7 +88,7 @@ function Collapse({ title, text }) {
 }
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 }
 
 Collapse.defaultProps = {
