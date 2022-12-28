@@ -6,6 +6,7 @@ import Colors from '../../utils/Colors'
 import ImageHomeBanner from '../../assets/Banner_Home_D.png'
 import { Main } from '../../utils/Atoms'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer'
 
 const CardWrapper = styled.section`
   @media (min-width: 992px) {
@@ -28,22 +29,25 @@ const LinkSingleProperty = styled(Link)`
 
 function Home() {
   return (
-    <Main>
-      <HomeBanner cover={ImageHomeBanner} />
-      <CardWrapper>
-        {DataProperty.map((property, index) => (
-          <article key={index}>
-            <LinkSingleProperty to={`/property/${property.id}`}>
-              <Card
-                id={property.id}
-                title={property.title}
-                cover={property.cover}
-              />
-            </LinkSingleProperty>
-          </article>
-        ))}{' '}
-      </CardWrapper>
-    </Main>
+    <div>
+      <Main>
+        <HomeBanner cover={ImageHomeBanner} />
+        <CardWrapper>
+          {DataProperty.map((property, index) => (
+            <article key={index}>
+              <LinkSingleProperty to={`/property/${property.id}`}>
+                <Card
+                  id={property.id}
+                  title={property.title}
+                  cover={property.cover}
+                />
+              </LinkSingleProperty>
+            </article>
+          ))}
+        </CardWrapper>
+      </Main>
+      <Footer />
+    </div>
   )
 }
 

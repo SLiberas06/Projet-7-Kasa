@@ -5,11 +5,14 @@ import { Main } from '../../utils/Atoms'
 import { useParams } from 'react-router-dom'
 import Collapse from '../../components/Collapse'
 import Rating from '../../components/Rating'
+import Carrousel from '../../components/Carrousel'
+import Footer from '../../components/Footer'
 
 function Property() {
-  const { propertyId } = useParams()
-  const property = DataProperty.find((property) => property.id === propertyId)
+  const { id } = useParams()
+  const property = DataProperty.find((property) => property.id === id)
   const {
+    cover,
     title,
     pictures,
     description,
@@ -21,12 +24,24 @@ function Property() {
   } = property
 
   return (
-    <Main>
-      <h1>{title}</h1>
-      <Rating />
-      <Collapse title="description" text={description}></Collapse>
-      <Collapse title="équipement" text={equipments + '  '}></Collapse>
-    </Main>
+    <div>
+      <Main>
+        <img src={cover} alt={title} />
+        <h1>{title}</h1>
+        <p>{location}</p>
+        <ul>
+          {tags.map((tags, index) => {
+            return <li key={index}>{tags}</li>
+          })}
+        </ul>
+        <p>{rating}</p>
+        <img src={host.picture} alt={host.name} />
+        <Collapse title="Description" text={description}></Collapse>
+
+        <Collapse title="Équipements" text={equipments + ' '}></Collapse>
+      </Main>
+      <Footer />
+    </div>
   )
 }
 export default Property

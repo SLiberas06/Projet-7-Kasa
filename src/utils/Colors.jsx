@@ -9,6 +9,7 @@ const Colors = {
   CardWrapper: '#F6F6F6',
   linearBannerLighten:
     'linear-gradient(360deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))',
+  FaStarGrey: ' #e3e3e3',
 }
 
 export default Colors
