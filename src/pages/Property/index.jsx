@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import DataProperty from '../../datas/logements.json'
-import Colors from '../../utils/Colors'
+// import Colors from '../../utils/Colors'
 import { Main } from '../../utils/Atoms'
 import { useParams } from 'react-router-dom'
 import Collapse from '../../components/Collapse'
 import Rating from '../../components/Rating'
-import Carrousel from '../../components/Carrousel'
+import SlideShow from '../../components/Slider'
 import Footer from '../../components/Footer'
 
 function Property() {
@@ -26,16 +26,17 @@ function Property() {
   return (
     <div>
       <Main>
-        <img src={cover} alt={title} />
+        <SlideShow />
         <h1>{title}</h1>
         <p>{location}</p>
-        <ul>
-          {tags.map((tags, index) => {
-            return <li key={index}>{tags}</li>
-          })}
-        </ul>
-        <p>{rating}</p>
-        <img src={host.picture} alt={host.name} />
+        {tags.map((tags, index) => {
+          return <span key={index}>{tags}</span>
+        })}
+        <Rating value={rating} />
+        <div>
+          <p>{host.name}</p>
+          <img src={host.picture} alt={host.name} />
+        </div>
         <Collapse title="Description" text={description}></Collapse>
 
         <Collapse title="Équipements" text={equipments + ' '}></Collapse>
