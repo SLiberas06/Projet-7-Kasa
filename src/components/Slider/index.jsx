@@ -1,62 +1,78 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+// import { Transition } from 'react-transition-group'
+import styled from 'styled-components'
 
-const SlideShow = ({ pictures }) => {
-  // const timer = useRef(null)
+function SlideShow({ pictures }) {
+  const timerRef = useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0)
-  // const allPictures = pictures.length
+  const allPictures = pictures.length
 
-  const ContainerSlider = {
-    backgroundImage: `url(${pictures[currentIndex]})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    width: '85vw',
-    height: '38vh',
-    diplay: 'flex',
-    borderRadius: '10px',
-    transition: '500ms ease-in-out',
-    color: '#fff',
-  }
+  const ContainerSlider = styled.div`
+    width: 85vw;
+    height: 38vh;
+    border-radius: 10px;
+    color: black;
+    background-image: url('${pictures[currentIndex]}');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 992px) {
+      height: 55vh;
+      border-radius: 25px;
+    }
+  `
+  const CurrentIndexStyled = styled.div`
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    top: 55vh;
+    left: 50%;
+    transition: 500ms;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  `
 
-  const rightArrowStyles = {
-    position: 'absolute',
-    top: '30%',
-    transform: 'translate(0, -50%)',
-    right: '18px',
-    fontSize: '30px',
-    color: '#fff',
-    zIndex: 1,
-    cursor: 'pointer',
-  }
+  const RightArrowStyled = styled(FiChevronRight)`
+    right: 5vw;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    @media (min-width: 992px) {
+      font-size: 130px;
+    }
+  `
 
-  const leftArrowStyles = {
-    position: 'absolute',
-    top: '30%',
-    transform: 'translate(0, -50%)',
-    left: '18px',
-    fontSize: '30px',
-    color: '#fff',
-    zIndex: 1,
-    cursor: 'pointer',
-  }
+  const LeftArrowStyled = styled(FiChevronLeft)`
+  left: 5vw;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  @media (min-width: 992px) {
+    font-size: 130px;
+  `
 
   const getPrevious = () => {
     const firstPicture = currentIndex === 0
-    const newIndex = firstPicture ? pictures.length - 1 : currentIndex - 1
+    const newIndex = firstPicture ? allPictures - 1 : currentIndex - 1
     setCurrentIndex(newIndex)
   }
 
   const getNext = () => {
-    const lastPicture = currentIndex === pictures.length - 1
+    const lastPicture = currentIndex === allPictures - 1
     const newIndex = lastPicture ? 0 : currentIndex + 1
     setCurrentIndex(newIndex)
   }
 
   //le logement comporte qu'une seule photo
   const onePicture = () =>
-    pictures.length <= 1 ? null : (
+    allPictures <= 1 ? null : (
       <span>
-        {currentIndex + 1} / {pictures.length}
+        {currentIndex + 1} / {allPictures}
       </span>
     )
 
@@ -64,25 +80,20 @@ const SlideShow = ({ pictures }) => {
   //   setCurrentIndex(pictureIndex)
   // }
 
-  // useEffect(() => {
-  //   if (timer.current) {
-  //     clearTimeout(timer.current)
-  //   }
-  //   timer.current = setTimeout(() => {
-  //     getNext()
-  //   }, 2000)
-  // })
+  useEffect(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+    }
+    timerRef.current = setTimeout(() => {
+      getNext()
+    }, 3500)
+  })
   return (
-    <div style={ContainerSlider}>
-      <div onClick={getPrevious}>
-        <FiChevronLeft style={leftArrowStyles} />
-      </div>
-      <div onClick={getNext}>
-        <FiChevronRight style={rightArrowStyles} />
-      </div>
-      {/* <div style={ContainerSlider} draggable="false"></div> */}
-      <div>{onePicture()}</div>
-    </div>
+    <ContainerSlider>
+      <LeftArrowStyled onClick={getPrevious} />
+      <RightArrowStyled onClick={getNext} />
+      <CurrentIndexStyled>{onePicture()}</CurrentIndexStyled>
+    </ContainerSlider>
   )
 }
 

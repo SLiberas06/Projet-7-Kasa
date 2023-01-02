@@ -27,10 +27,15 @@ function Property() {
           <img src={property.host.picture} alt={property.host.name} />
         </div>
         <Collapse title="Description" text={property.description}></Collapse>
-
         <Collapse
           title="Équipements"
-          text={property.equipments + ' '}
+          text={property.equipments.map((equipments, index) => {
+            return (
+              <span key={index}>
+                {equipments} <br />
+              </span>
+            )
+          })}
         ></Collapse>
       </Main>
       <Footer />
