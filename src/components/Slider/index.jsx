@@ -20,6 +20,7 @@ function SlideShow({ pictures }) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 3vh;
     @media (min-width: 992px) {
       height: 55vh;
       border-radius: 25px;
@@ -76,10 +77,7 @@ function SlideShow({ pictures }) {
       </span>
     )
 
-  // const getSlide = (pictureIndex) => {
-  //   setCurrentIndex(pictureIndex)
-  // }
-
+  // timer pour que les photos défilent toute seule
   useEffect(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current)
