@@ -9,6 +9,7 @@ import Rating from '../../components/Rating'
 import SlideShow from '../../components/Slider'
 import Footer from '../../components/Footer'
 import Fonts from '../../utils/Atoms'
+import Tags from '../../components/Tags'
 
 const PropertyWrapper = styled.div`
   margin-left: 7vw;
@@ -20,6 +21,7 @@ const PropertyTitle = styled.h1`
   font-size: 18px;
   font-weight: 100;
   text-align: left;
+  letter-spacing: 0.8px;
 `
 const PropertyLocation = styled.p`
   font-size: 14px;
@@ -37,7 +39,7 @@ function Property() {
           <PropertyTitle>{property.title}</PropertyTitle>
           <PropertyLocation>{property.location}</PropertyLocation>
           {property.tags.map((tags, index) => {
-            return <span key={index}>{tags}</span>
+            return <Tags key={index} text={tags} />
           })}
           <Rating value={property.rating} />
           <div>
@@ -45,17 +47,8 @@ function Property() {
             <img src={property.host.picture} alt={property.host.name} />
           </div>
         </PropertyWrapper>
-        <Collapse title="Description" text={property.description}></Collapse>
-        <Collapse
-          title="Équipements"
-          text={property.equipments.map((equipments, index) => {
-            return (
-              <span key={index}>
-                {equipments} <br />
-              </span>
-            )
-          })}
-        ></Collapse>
+        <Collapse title="Description" text={property.description} />
+        <Collapse title="Équipements" text={property.equipments} />
       </Main>
       <Footer />
     </div>

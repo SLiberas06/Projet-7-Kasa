@@ -11,9 +11,7 @@ function About() {
       <Main>
         <AboutBanner cover={ImageAboutBanner} />
         {AboutData.map((data, index) => (
-          <article key={index}>
-            <Collapse title={`${data.title}`} text={data.text} />
-          </article>
+          <Collapse key={index} title={`${data.title}`} text={data.text} />
         ))}
       </Main>
       <Footer />

@@ -21,18 +21,21 @@ function SlideShow({ pictures }) {
     justify-content: space-between;
     align-items: center;
     margin-top: 3vh;
+    flex-wrap: wrap;
     @media (min-width: 992px) {
       height: 55vh;
       border-radius: 25px;
+      align-items: flex-end;
     }
   `
+
   const CurrentIndexStyled = styled.div`
-    position: absolute;
+    width: 100%;
     font-size: 20px;
     color: #fff;
-    top: 55vh;
-    left: 50%;
-    transition: 500ms;
+    margin-top: -10vh;
+    display: inline-block;
+    text-align: center;
     @media (max-width: 992px) {
       display: none;
     }
