@@ -88,7 +88,6 @@ function Collapse({ title, text }) {
 }
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string,
 }
 
 Collapse.defaultProps = {

@@ -3,13 +3,14 @@ import DataProperty from '../../datas/logements.json'
 import Colors from '../../utils/Colors'
 import styled from 'styled-components'
 import { Main } from '../../utils/Atoms'
-import { useParams } from 'react-router-dom'
+import { useParams, Routes, Route } from 'react-router-dom'
 import Collapse from '../../components/Collapse'
 import Rating from '../../components/Rating'
 import SlideShow from '../../components/Slider'
 import Footer from '../../components/Footer'
 import Fonts from '../../utils/Atoms'
 import Tags from '../../components/Tags'
+import Error from '../Error'
 
 const PropertyWrapper = styled.div`
   margin-left: 7vw;
@@ -30,6 +31,13 @@ const PropertyLocation = styled.p`
 function Property() {
   const { id } = useParams()
   const property = DataProperty.find((property) => property.id === id)
+  if (!property) {
+    return (
+      <Routes>
+        <Route path="*" element={<Error />} />
+      </Routes>
+    )
+  }
 
   return (
     <div>
@@ -48,7 +56,16 @@ function Property() {
           </div>
         </PropertyWrapper>
         <Collapse title="Description" text={property.description} />
-        <Collapse title="Équipements" text={property.equipments} />
+        <Collapse
+          title="Équipements"
+          text={property.equipments.map((equipment, index) => {
+            return (
+              <span key={index}>
+                {equipment} <br />
+              </span>
+            )
+          })}
+        />
       </Main>
       <Footer />
     </div>
