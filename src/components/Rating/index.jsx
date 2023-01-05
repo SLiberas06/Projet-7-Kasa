@@ -1,14 +1,23 @@
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
+import { MdStarRate } from 'react-icons/md'
 import Colors from '../../utils/Colors'
 import styled from 'styled-components'
 
-const FaStarGrey = styled(FaStar)`
+const FaStarGrey = styled(MdStarRate)`
   color: ${Colors.FaStarGrey};
+  font-size: 18px;
+  @media (min-width: 992px) {
+    font-size: 35px;
+  }
 `
-const FaStarColor = styled(FaStar)`
+const FaStarColor = styled(MdStarRate)`
   color: ${Colors.primary};
+  font-size: 18px;
+  @media (min-width: 992px) {
+    font-size: 35px;
+  }
 `
+
 function Rating({ value }) {
   const stars = [1, 2, 3, 4, 5]
   return (

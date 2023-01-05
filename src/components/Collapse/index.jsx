@@ -20,7 +20,7 @@ const DivCollapse = styled.div`
   height: 30px;
   border-radius: 5px;
   background-color: ${Colors.primary};
-  margin: 10px 3px;
+  margin: 10px 3px 0px;
   padding: 0px 8px;
   @media (min-width: 992px) {
     width: 70%;
@@ -34,6 +34,7 @@ const SectionCollapse = styled.section`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 0px;
 `
 const TitleCollapse = styled.h1`
   font-size: 15px;
@@ -47,8 +48,8 @@ const TitleCollapse = styled.h1`
 `
 const TextCollapse = styled.p`
   background-color: ${Colors.backgroundTextAbout};
-  padding: 10px 10px 40px 10px;
-  margin-top: -10px;
+  padding: 10px 8px 40px 8px;
+  margin-top: 0px;
   border-radius: 5px;
   width: 90%;
   font-size: 14px;
@@ -59,7 +60,6 @@ const TextCollapse = styled.p`
     width: 70%;
     font-size: 24px;
     letter-spacing: 1px;
-    padding: 10px 0px 40px 20px;
   }
 `
 

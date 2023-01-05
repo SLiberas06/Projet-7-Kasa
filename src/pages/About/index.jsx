@@ -10,6 +10,7 @@ function About() {
     <div>
       <Main>
         <AboutBanner cover={ImageAboutBanner} />
+
         {AboutData.map((data, index) => (
           <Collapse key={index} title={`${data.title}`} text={data.text} />
         ))}
