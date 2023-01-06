@@ -8,6 +8,7 @@ const FaStarGrey = styled(MdStarRate)`
   font-size: 18px;
   @media (min-width: 992px) {
     font-size: 35px;
+    margin-left: 3px;
   }
 `
 const FaStarColor = styled(MdStarRate)`
@@ -15,6 +16,7 @@ const FaStarColor = styled(MdStarRate)`
   font-size: 18px;
   @media (min-width: 992px) {
     font-size: 35px;
+    margin-left: 3px;
   }
 `
 

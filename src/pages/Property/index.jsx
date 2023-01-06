@@ -41,7 +41,7 @@ const PropertyTitle = styled.h1`
 const PropertyLocation = styled.p`
   font-size: 14px;
   @media (min-width: 992px) {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 0;
   }
 `
@@ -69,17 +69,21 @@ const TagsWrapper = styled.div`
   flex-direction: row;
   justify-content: start;
   flex-wrap: wrap;
+  @media (min-width: 992px) {
+    margin-bottom: 10px;
+  }
 `
-// const CollapseWrapper = styled.div
-//   @media (min-width: 992px) {
-//     // width: 90%;
-//     // height: 30%;
-//     // flex-direction: row;
-//     // display: flex;
-//     // align-items: flex-start;
-//     // justify-content: space-between;
-//   }
-// `
+const CollapseWrapper = styled.div`
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 91%;
+    height: 30%;
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+`
 
 function Property() {
   const { id } = useParams()
@@ -111,18 +115,20 @@ function Property() {
             <Host name={property.host.name} picture={property.host.picture} />
           </RatingHostWrapper>
         </PropertyWrapper>
-        <Collapse title="Description" text={property.description} />
-        <Collapse
-          title="Équipements"
-          text={property.equipments.map((equipment, index) => {
-            return (
-              <span key={index}>
-                {equipment}
-                <br />
-              </span>
-            )
-          })}
-        />
+        <CollapseWrapper>
+          <Collapse title="Description" text={property.description} />
+          <Collapse
+            title="Équipements"
+            text={property.equipments.map((equipment, index) => {
+              return (
+                <span key={index}>
+                  {equipment}
+                  <br />
+                </span>
+              )
+            })}
+          />
+        </CollapseWrapper>
       </Main>
       <Footer />
     </div>

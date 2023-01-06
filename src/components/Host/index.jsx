@@ -5,6 +5,9 @@ const SlyledHost = styled.div`
   width: 30%;
   display: flex;
   align-items: center;
+  @media (min-width: 992px) {
+    margin-bottom: 15px;
+  }
 `
 const ImageHost = styled.img`
   border-radius: 50%;

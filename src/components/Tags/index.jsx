@@ -19,6 +19,9 @@ const TagsStyled = styled.div`
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    width: auto;
+    height: 20px;
+    margin-right: 10px;
   }
 `
 

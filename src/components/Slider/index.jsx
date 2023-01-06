@@ -3,7 +3,7 @@ import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
 } from 'react-icons/md'
-// import { Transition } from 'react-transition-group'
+import Fonts from '../../utils/Atoms'
 import styled from 'styled-components'
 
 const ContainerSlider = styled.div`
@@ -26,10 +26,11 @@ const ContainerSlider = styled.div`
 `
 const CurrentIndexStyled = styled.div`
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   margin-top: -10vh;
   display: inline-block;
+  font-family: ${Fonts.principal};
   text-align: center;
   @media (max-width: 992px) {
     display: none;
