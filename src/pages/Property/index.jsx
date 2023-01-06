@@ -50,6 +50,7 @@ const RatingHostWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 7%;
+  margin-top: 10px;
   @media (min-width: 992px) {
     float: right;
     flex-direction: column-reverse;
@@ -63,14 +64,13 @@ const RatingHostWrapper = styled.div`
 `
 const TagsWrapper = styled.div`
   width: 90%;
-  height: 70px;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
   flex-wrap: wrap;
-  align-items: start;
 `
-// const CollapseWrapper = styled.div`
+// const CollapseWrapper = styled.div
 //   @media (min-width: 992px) {
 //     // width: 90%;
 //     // height: 30%;
@@ -80,9 +80,11 @@ const TagsWrapper = styled.div`
 //     // justify-content: space-between;
 //   }
 // `
+
 function Property() {
   const { id } = useParams()
   const property = DataProperty.find((property) => property.id === id)
+
   if (!property) {
     return (
       <Routes>
@@ -115,7 +117,8 @@ function Property() {
           text={property.equipments.map((equipment, index) => {
             return (
               <span key={index}>
-                {equipment} <br />
+                {equipment}
+                <br />
               </span>
             )
           })}

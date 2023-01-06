@@ -35,7 +35,11 @@ const SectionCollapse = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 0px;
+  @media (min-width: 992px) {
+    width: 80%;
+  }
 `
+
 const TitleCollapse = styled.h1`
   font-size: 15px;
   color: ${Colors.textWhite};
@@ -76,6 +80,7 @@ const ArrowDown = styled(FaChevronDown)`
     font-size: 30px;
   }
 `
+
 function Collapse({ title, text }) {
   const [isOpen, setIsOpen] = useState(true)
   return isOpen ? (

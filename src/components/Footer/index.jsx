@@ -14,6 +14,7 @@ const StyledFooter = styled.footer`
   justify-content: center;
   flex-direction: column;
   padding: 30px 0px 30px 0px;
+  margin-top: 30px;
 `
 
 const FooterH3 = styled.h3`

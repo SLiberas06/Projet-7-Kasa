@@ -9,7 +9,7 @@ const TagsStyled = styled.div`
   height: 15px;
   font-size: 9px;
   border-radius: 4px;
-  margin-right: 10px;
+  margin: 5px 5px 5px 0;
   text-align: center;
   padding: 4px 3px 0px 3px;
   font-weight: 100;
