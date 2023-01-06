@@ -23,8 +23,8 @@ const DivCollapse = styled.div`
   margin: 10px 3px 0px;
   padding: 0px 8px;
   @media (min-width: 992px) {
-    width: 70%;
     height: 50px;
+    border-radius: 10px;
   }
 `
 const SectionCollapse = styled.section`
@@ -41,7 +41,7 @@ const TitleCollapse = styled.h1`
   color: ${Colors.textWhite};
   font-weight: 100;
   @media (min-width: 992px) {
-    font-size: 25px;
+    font-size: 22px;
     padding-left: 10px;
     letter-spacing: 1px;
   }
@@ -57,12 +57,25 @@ const TextCollapse = styled.p`
   font-weight: 200;
   color: ${Colors.primary};
   @media (min-width: 992px) {
-    width: 70%;
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 1px;
+    height: 100%;
   }
 `
-
+const ArrowUp = styled(FaChevronUp)`
+  font-size: 20px;
+  color: white;
+  @media (min-width: 992px) {
+    font-size: 30px;
+  }
+`
+const ArrowDown = styled(FaChevronDown)`
+  font-size: 20px;
+  color: white;
+  @media (min-width: 992px) {
+    font-size: 30px;
+  }
+`
 function Collapse({ title, text }) {
   const [isOpen, setIsOpen] = useState(true)
   return isOpen ? (
@@ -70,7 +83,7 @@ function Collapse({ title, text }) {
       <DivCollapse className="Open">
         <TitleCollapse>{title}</TitleCollapse>
         <ButtonCollapse onClick={() => setIsOpen(false)}>
-          <FaChevronUp fontSize="20px" color="white" />
+          <ArrowUp />
         </ButtonCollapse>
       </DivCollapse>
       <TextCollapse>{text}</TextCollapse>
@@ -80,7 +93,7 @@ function Collapse({ title, text }) {
       <DivCollapse className="Close">
         <TitleCollapse>{title}</TitleCollapse>
         <ButtonCollapse onClick={() => setIsOpen(true)}>
-          <FaChevronDown fontSize="20px" color="white" />
+          <ArrowDown />
         </ButtonCollapse>
       </DivCollapse>
     </SectionCollapse>

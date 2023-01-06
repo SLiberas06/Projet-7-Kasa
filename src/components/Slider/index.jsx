@@ -1,15 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import {
+  MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md'
 // import { Transition } from 'react-transition-group'
 import styled from 'styled-components'
 
 const ContainerSlider = styled.div`
   width: 85vw;
   height: 38vh;
+  background-image: ${(props) => props.theme.main};
+  background-position: center;
+  background-size: cover;
   border-radius: 10px;
-  // background-position: center;
-  // background-size: cover;
-  // background-color: red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,22 +35,22 @@ const CurrentIndexStyled = styled.div`
     display: none;
   }
 `
-const RightArrowStyled = styled(FiChevronRight)`
+const RightArrowStyled = styled(MdOutlineArrowForwardIos)`
   right: 5vw;
   font-size: 30px;
   color: #fff;
   cursor: pointer;
   @media (min-width: 992px) {
-    font-size: 130px;
+    font-size: 100px;
   }
 `
-const LeftArrowStyled = styled(FiChevronLeft)`
+const LeftArrowStyled = styled(MdOutlineArrowBackIosNew)`
 left: 5vw;
 font-size: 30px;
 color: #fff;
 cursor: pointer;
 @media (min-width: 992px) {
-font-size: 130px;
+font-size: 100px;
 `
 
 function Slider({ pictures }) {
@@ -55,12 +58,14 @@ function Slider({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const allPictures = pictures.length
 
+  //retourner à la photo précédente
   const getPrevious = () => {
     const firstPicture = currentIndex === 0
     const newIndex = firstPicture ? allPictures - 1 : currentIndex - 1
     setCurrentIndex(newIndex)
   }
 
+  // aller à la photo suivante
   const getNext = () => {
     const lastPicture = currentIndex === allPictures - 1
     const newIndex = lastPicture ? 0 : currentIndex + 1
@@ -75,11 +80,9 @@ function Slider({ pictures }) {
       </span>
     )
 
-  const containerSliderWithPictureBg = {
-    backgroundImage: `url(${pictures[currentIndex]})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    borderRadius: '10px',
+  //utilisation d'une props pour intégrer au container " styled" les photos de logements scopées dans la function
+  const theme = {
+    main: `url(${pictures[currentIndex]})`,
   }
 
   // timer pour que les photos défilent toute seule
@@ -92,13 +95,11 @@ function Slider({ pictures }) {
     }, 3500)
   })
   return (
-    <div style={containerSliderWithPictureBg}>
-      <ContainerSlider>
-        <LeftArrowStyled onClick={getPrevious} />
-        <RightArrowStyled onClick={getNext} />
-        <CurrentIndexStyled>{onePicture()}</CurrentIndexStyled>{' '}
-      </ContainerSlider>
-    </div>
+    <ContainerSlider theme={theme}>
+      <LeftArrowStyled onClick={getPrevious} />
+      <RightArrowStyled onClick={getNext} />
+      <CurrentIndexStyled>{onePicture()}</CurrentIndexStyled>{' '}
+    </ContainerSlider>
   )
 }
 

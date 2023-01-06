@@ -50,25 +50,34 @@ const RatingHostWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 7%;
-  margin-top: 20px;
   @media (min-width: 992px) {
     float: right;
     flex-direction: column-reverse;
     justify-content: space-around;
     align-items: center;
     width: 15vw;
-    height: 30vh;
-    margin: 0;
+    height: 20vh;
+    margin-top: 30px;
+    margin-right: 0;
   }
 `
-// const CollapseWrapper = styled(Collapse)`
+const TagsWrapper = styled.div`
+  width: 90%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: start;
+`
+// const CollapseWrapper = styled.div`
 //   @media (min-width: 992px) {
-//     width: 50%;
-//     flex-wrap: nowrap;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     background-color: red;
+//     // width: 90%;
+//     // height: 30%;
+//     // flex-direction: row;
+//     // display: flex;
+//     // align-items: flex-start;
+//     // justify-content: space-between;
 //   }
 // `
 function Property() {
@@ -89,9 +98,11 @@ function Property() {
           <div>
             <PropertyTitle>{property.title}</PropertyTitle>
             <PropertyLocation>{property.location}</PropertyLocation>
-            {property.tags.map((tags, index) => {
-              return <Tags key={index} text={tags} />
-            })}
+            <TagsWrapper>
+              {property.tags.map((tags, index) => {
+                return <Tags key={index} text={tags} />
+              })}
+            </TagsWrapper>
           </div>
           <RatingHostWrapper>
             <Rating value={property.rating} />

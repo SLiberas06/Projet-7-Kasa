@@ -5,16 +5,14 @@ import styled from 'styled-components'
 const TagsStyled = styled.div`
   color: ${Colors.textWhite};
   background-color: ${Colors.primary};
-  width: 60px;
-  height: 10px;
-  font-size: 10px;
+  width: 23vw;
+  height: 15px;
+  font-size: 9px;
   border-radius: 4px;
-  margin: 5px 10px 0px 0px;
+  margin-right: 10px;
   text-align: center;
-  padding: 4px 10px 4px;
+  padding: 4px 3px 0px 3px;
   font-weight: 100;
-  display: inline;
-  flex-wrap: nowrap;
   letter-spacing: 0.5px;
   @media (min-width: 992px) {
     font-size: 15px;
@@ -23,6 +21,7 @@ const TagsStyled = styled.div`
     padding-right: 20px;
   }
 `
+
 function Tags({ text }) {
   return <TagsStyled>{text}</TagsStyled>
 }
