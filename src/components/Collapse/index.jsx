@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri'
 import styled from 'styled-components'
 import Fonts from '../../utils/Atoms'
 import Colors from '../../utils/Colors'
@@ -20,7 +20,7 @@ const DivCollapse = styled.div`
   height: 30px;
   border-radius: 5px;
   background-color: ${Colors.primary};
-  margin: 10px 3px 0px;
+  margin: 10px 4px 0px;
   padding: 0px 8px;
   @media (min-width: 992px) {
     height: 50px;
@@ -66,18 +66,20 @@ const TextCollapse = styled.p`
     height: 100%;
   }
 `
-const ArrowUp = styled(FaChevronUp)`
-  font-size: 20px;
+const ArrowUp = styled(RiArrowUpSLine)`
+  font-size: 30px;
   color: white;
+  margin-right: -15px;
   @media (min-width: 992px) {
-    font-size: 30px;
+    font-size: 50px;
   }
 `
-const ArrowDown = styled(FaChevronDown)`
-  font-size: 20px;
+const ArrowDown = styled(RiArrowDownSLine)`
+  font-size: 30px;
   color: white;
+  margin-right: -15px;
   @media (min-width: 992px) {
-    font-size: 30px;
+    font-size: 50px;
   }
 `
 
