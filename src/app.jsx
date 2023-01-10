@@ -13,11 +13,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<About />} />
-
         <Route path="/property/:id" element={<Property />} />
-
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
